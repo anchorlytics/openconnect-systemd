@@ -2,7 +2,8 @@
 systemd service unit for openconnect client for Cisco AnyConnect VPN
 
 ## Usage
-+ Copy to `/etc/systemd/service/openconnect.service`
++ Copy service file to `/etc/systemd/service/openconnect.service`
++ Copy netdev file to `/etc/systemd/network/vpn0.netdev`
 + (Optional) systemd unit config in `/etc/default/openconnect`
 + (Optional) openconnect config in `/etc/openconnect.conf` (see openconnect (8))
 

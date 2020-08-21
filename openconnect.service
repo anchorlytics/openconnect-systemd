@@ -4,11 +4,13 @@ Documentation=man:openconnect(8)
 After=network.target
 
 [Service]
-Environment=PIDFILE=/run/openconnect.pid CONF=/etc/openconnect.conf
+Environment=PIDFILE=/run/openconnect.pid
+Environment=IFACE=vpn0
+Environment=CONF=/etc/openconnect.conf
 EnvironmentFile=-/etc/default/openconnect
 Type=forking
 PIDFile=$PIDFILE
-ExecStart=/usr/sbin/openconnect -b --pid-file $PIDFILE --config $CONF
+ExecStart=/usr/sbin/openconnect -b --pid-file $PIDFILE -i $IFACE --config $CONF
 ExecReload=/bin/kill -USR2 $MAINPID
 Restart=on-failure
 

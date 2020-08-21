@@ -1,0 +1,8 @@
+[NetDev]
+Description=Interface for OpenConnect VPN
+Name=vpn0
+Kind=tun
+
+[Tun]
+#User=
+#Group=
